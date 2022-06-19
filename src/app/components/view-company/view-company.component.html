@@ -1,7 +1,7 @@
 <!-- <p>view-company works!</p> -->
 
 <!-- <h3 class="text-center text-primary">Comparison Charts</h3> -->
-<form>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <div class="form-group row">
         <label for="companyCode" class="col-sm-2 col-form-label">Company Code</label>
         <div class="col-sm-10">

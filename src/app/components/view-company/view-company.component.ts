@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { CompanyServiceService } from 'src/app/services/company-service.service';
 
 @Component({
   selector: 'app-view-company',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewCompanyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private companyService: CompanyServiceService) { }
 
   ngOnInit(): void {
+  }
+  onSubmit(myForm: NgForm):void{
+    debugger;
+    console.log("Welcome");
+    alert("Welcome");
+
+    this.companyService.getStockDetailsForCompany();
   }
 
 }
