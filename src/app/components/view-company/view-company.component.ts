@@ -9,16 +9,32 @@ import { CompanyServiceService } from 'src/app/services/company-service.service'
 })
 export class ViewCompanyComponent implements OnInit {
 
-  constructor(private companyService: CompanyServiceService) { }
+  stockPriceList: any;
+  companyCode: any;
+  companyName: any;
+  startDate: any;
+  endDate: any;
+  constructor(private companyService: CompanyServiceService) {
+    this.stockPriceList = [];
+  }
+
 
   ngOnInit(): void {
   }
-  onSubmit(myForm: NgForm):void{
-    debugger;
-    console.log("Welcome");
-    alert("Welcome");
-
-    this.companyService.getStockDetailsForCompany();
+  onSubmit(myForm: NgForm): void {    
+    console.log("Search submit!");
+    console.log(this.companyCode);
+    console.log(this.companyName);
+    console.log(this.startDate);
+    console.log(this.endDate);
+    // alert("Welcome");
+   // myForm.getControl('companyCode');
+    console.log(myForm.value);
+    this.companyService.getStockDetailsForCompany(this.companyCode, this.startDate, this.endDate)
+    .subscribe(res => {
+      console.log(res);
+      this.stockPriceList = res;
+    });
   }
 
 }
