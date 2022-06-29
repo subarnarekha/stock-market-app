@@ -6,6 +6,7 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { ViewCompanyComponent } from './components/view-company/view-company.component';
 
 const routes: Routes = [
+  { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'view-company', component: ViewCompanyComponent },
   { path: 'add-company', component: AddCompanyComponent },

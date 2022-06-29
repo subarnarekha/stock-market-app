@@ -9,6 +9,7 @@ import { ViewCompanyComponent } from './components/view-company/view-company.com
 import { AddCompanyComponent } from './components/add-company/add-company.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
