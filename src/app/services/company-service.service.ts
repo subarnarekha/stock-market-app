@@ -18,11 +18,12 @@ export class CompanyServiceService {
     var stockList : StockPrice[];
     //var search_endpoint="/api/v1.0/market/stock/get/1001/25-05-22/30-05-22";   
     var search_endpoint = "/api/v1.0/market/stock/get/" + companyCode + "/" + startDate + "/" + endDate;
-    return this.http.get<StockPrice[]>(this.stock_price_url + search_endpoint, {
-      headers: {
-        "Access-Control-Allow-Origin": "*/*"
-      }
-    });
+    return this.http.get<StockPrice[]>(this.stock_price_url + search_endpoint);
+    //   {
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*/*"
+    //   }
+    // });
     // .map((response: Response) => <StockPrice[]>response.json());    
    /*  .subscribe(res=>{
       console.log(res);

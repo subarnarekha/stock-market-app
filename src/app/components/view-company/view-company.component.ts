@@ -72,6 +72,9 @@ export class ViewCompanyComponent implements OnInit {
           console.log(res);
           if (res) {
             this.stockPriceList = res;
+            this.stockPriceList.forEach(obj =>{
+                obj["time"] = (obj.date) ? this.datepipe.transform(obj.date, "h:mm a") as string: this.datepipe.transform(new Date(), "h:mm a") as string;
+            });
             var priceList = this.stockPriceList?.filter((obj) => {
               return Number(obj?.price);
             });

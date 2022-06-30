@@ -12,7 +12,7 @@ export interface StockPrice {
   companyCode: number;
   price: number;
   date: string;
-  time: string;  
+  time?: string;  
 }
 
   /* CONST stock_price_list =
